@@ -1,0 +1,6 @@
+#hello:
+#  path: /bonjour/{name?"hhhh"}/{old?35} 
+#  controller: App\Controller\testCtr::bonjour
+  
+
+   

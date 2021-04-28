@@ -1,0 +1,18 @@
+{% extends "base.html.twig"%}
+{% block title %}Add_Article{% endblock %}
+
+{% block body %}
+<div class="container">
+<h3>Add your personel Post :</h3><br/><br/>
+<div class="form-control">
+{{ form_start(myForm)}}
+{{ form_errors(myForm) }}
+{{ form_row(myForm.Title,{'attr':{'placeholder':"insert your title",'class':"form-control"}}) }}</br>
+{{ form_row(myForm.Content,{'attr':{'placeholder':"insert your content",'class':"form-control"}})}}</br>
+{{ form_row(myForm.Image,{'attr':{'placeholder':"insert your Url",'class':"form-control"}}) }}</br>
+<button type="submit" class="btn btn-primary">{% if(exist)%}Edit{% else %}Add{% endif %}</button>
+{{ form_end(myForm)}}
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+{% block title %}Show{% endblock %}
+{% block stylesheets %} 
+<style>
+table, th, td 
+{
+    border: 1px solid black;
+}  
+</style>
+{% endblock %}
+
+
+{% block body %}
+<h3>Welcome to Articles show Room</h3>
+<a href="{{ path('article.add') }}">Create a new article</a>
+
+<table style="width:100%;">
+    <tr >
+      <th>Title</th>
+      <th>Content</th>
+      <th>Image</th>
+      <th>Action</th>
+    </tr>
+    {% for article in MyArticles %}
+    <tr>
+      <td>{{ article.getTitle() }}</td>
+      <td>{{ article.getContent() }}</td>
+     <td><img src="{{ article.getImage() }}" width="100" height="100"></td>
+     <td><a href="{{ path('article_edit', {id: article.getId}) }}">Edit</a>&nbsp;
+         <a href="{{ path('article_delete', {id: article.getId}) }}">Delete</a>&nbsp;
+         <a href="{{ path('article_detail', {id: article.getId}) }}">show</a>
+        </td> 
+     
+    </tr>
+    {% endfor %} 
+    
+  </table>
+{% endblock %}
